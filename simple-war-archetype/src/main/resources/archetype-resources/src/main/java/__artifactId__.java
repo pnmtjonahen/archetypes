@@ -20,22 +20,28 @@
 
 package ${package};
 
-import javax.ws.rs.GET;
-import javax.ws.rs.Path;
-import javax.ws.rs.Produces;
-import javax.ws.rs.core.MediaType;
-import javax.ws.rs.core.Response;
+import javax.xml.bind.annotation.XmlRootElement;
 
 /**
  *
  * @author Philippe Tjon - A - Hen
  */
-@Path("/")
-public class HelloWorldBoundry {
+@XmlRootElement
+public class ${artifactId}{
+    private String msg;
 
-    @GET
-    @Produces(MediaType.APPLICATION_JSON)
-    public Response get() {
-        return Response.ok(new HelloWorld("Hello, world!")).build();
+    public ${artifactId}(String msg) {
+        this.msg = msg;
     }
+
+    
+    public String getMsg() {
+        return msg;
+    }
+
+    public void setMsg(String msg) {
+        this.msg = msg;
+    }
+    
+    
 }
